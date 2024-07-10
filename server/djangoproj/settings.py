@@ -39,7 +39,8 @@ ALLOWED_HOSTS = [
 
 CSRF_TRUSTED_ORIGINS = [
     (
-        'https://eldhosesaji2-8000.theiadockernext-0-labs-prod-theiak8s-4-tor01.'
+        'https://eldhosesaji2-8000.'
+        'theiadockernext-0-labs-prod-theiak8s-4-tor01.'
         'proxy.cognitiveclass.ai'
     ),
     'http://127.0.0.1',
