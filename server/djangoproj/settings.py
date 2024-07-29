@@ -31,18 +31,12 @@ DEBUG = True
 ALLOWED_HOSTS = [
     'localhost',
     '127.0.0.1',
-    (
-        'eldhosesaji2-8000.theiadockernext-0-labs-prod-theiak8s-4-tor01.'
-        'proxy.cognitiveclass.ai'
-    ),
+    'https://dealership-l6pu.onrender.com',
+    'dealership-l6pu.onrender.com',
 ]
 
 CSRF_TRUSTED_ORIGINS = [
-    (
-        'https://eldhosesaji2-8000.'
-        'theiadockernext-0-labs-prod-theiak8s-4-tor01.'
-        'proxy.cognitiveclass.ai'
-    ),
+    'https://dealership-l6pu.onrender.com',
     'http://127.0.0.1',
 ]
 
@@ -65,6 +59,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',

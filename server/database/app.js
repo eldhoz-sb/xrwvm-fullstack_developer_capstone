@@ -13,7 +13,8 @@ const dealerships_data = JSON.parse(
   fs.readFileSync("dealerships.json", "utf8")
 );
 
-mongoose.connect("mongodb://mongo_db:27017/", { dbName: "dealershipsDB" });
+const mongoURI = process.env.MONGODB_URI || 'mongodb://localhost:27017/dealershipsDB';
+mongoose.connect(mongoURI);
 
 const Reviews = require("./review");
 

@@ -13,7 +13,8 @@ app.use(express.urlencoded({ extended: false }));
 
 const carsData = JSON.parse(fs.readFileSync('car_records.json', 'utf8'));
 
-mongoose.connect('mongodb://mongo_db:27017/', { dbName: 'dealershipsDB' });
+const mongoURI = process.env.MONGODB_URI || 'mongodb://localhost:27017/dealershipsDB';
+mongoose.connect(mongoURI);
 
 
 const Cars = require('./inventory');
