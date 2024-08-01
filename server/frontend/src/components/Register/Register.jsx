@@ -21,7 +21,7 @@ const Register = () => {
   const register = async (e) => {
     e.preventDefault();
 
-    let register_url = window.location.origin+"/djangoapp/register";
+    let register_url = window.location.origin+"/djangoapp/registration";
     
     const res = await fetch(register_url, {
         method: "POST",
@@ -37,6 +37,7 @@ const Register = () => {
         }),
     });
 
+    console.log(res)
     const json = await res.json();
     if (json.status) {
         sessionStorage.setItem('username', json.userName);
@@ -64,26 +65,26 @@ const Register = () => {
         <div className="inputs">
           <div className="input">
             <img src={user_icon} className="img_icon" alt='Username'/>
-            <input type="text"  name="username" placeholder="Username" className="input_field" onChange={(e) => setUserName(e.target.value)}/>
+            <input type="text"  name="username" placeholder="Username" className="input_field" onChange={(e) => setUserName(e.target.value)} required/>
           </div>
           <div>
             <img src={user_icon} className="img_icon" alt='First Name'/>
-            <input type="text"  name="first_name" placeholder="First Name" className="input_field" onChange={(e) => setFirstName(e.target.value)}/>
+            <input type="text"  name="first_name" placeholder="First Name" className="input_field" onChange={(e) => setFirstName(e.target.value)} required/>
           </div>
 
           <div>
             <img src={user_icon} className="img_icon" alt='Last Name'/>
-            <input type="text"  name="last_name" placeholder="Last Name" className="input_field" onChange={(e) => setlastName(e.target.value)}/>
+            <input type="text"  name="last_name" placeholder="Last Name" className="input_field" onChange={(e) => setlastName(e.target.value)} required/>
           </div>
 
           <div>
             <img src={email_icon} className="img_icon" alt='Email'/>
-            <input type="email"  name="email" placeholder="email" className="input_field" onChange={(e) => setEmail(e.target.value)}/>
+            <input type="email"  name="email" placeholder="email" className="input_field" onChange={(e) => setEmail(e.target.value)} required/>
           </div>
 
           <div className="input">
             <img src={password_icon} className="img_icon" alt='password'/>
-            <input name="psw" type="password"  placeholder="Password" className="input_field" onChange={(e) => setPassword(e.target.value)}/>
+            <input name="psw" type="password"  placeholder="Password" className="input_field" onChange={(e) => setPassword(e.target.value)} required/>
           </div>
 
         </div>

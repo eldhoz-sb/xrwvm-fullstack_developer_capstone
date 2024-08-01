@@ -91,7 +91,7 @@ img{
 }
 
 .username{
-  font: 30px sans-serif;
+  font: 20px sans-serif;
   color:black;
   justify-content: 'flex-end';
   align-self:flex-end;

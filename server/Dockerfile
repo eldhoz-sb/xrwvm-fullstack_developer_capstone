@@ -21,8 +21,5 @@ EXPOSE 8000
 # Collect static files
 RUN python manage.py collectstatic --noinput
 
-RUN chmod +x /app/entrypoint.sh
-
-ENTRYPOINT ["/bin/bash","/app/entrypoint.sh"]
-
+# Set the default command to run the application
 CMD ["gunicorn", "--bind", ":8000", "--workers", "3", "djangoproj.wsgi"]
