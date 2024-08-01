@@ -1,10 +1,19 @@
+# Use the official Python image from the Docker Hub
 FROM python:3.9.18-slim-bookworm
 
-
+# Set the working directory
 WORKDIR /python-docker
 
-COPY requirements.txt requirements.txt
+# Copy the requirements file into the image
+COPY requirements.txt .
+
+# Install the dependencies
 RUN pip3 install -r requirements.txt
+
+# Copy the rest of the application code
 COPY . .
-RUN ls
-CMD [ "python3", "-m" , "flask", "run", "--host=0.0.0.0"]
+
+# Expose the port the app runs on
+EXPOSE 50505
+
+ENTRYPOINT ["gunicorn", "app:app"]
