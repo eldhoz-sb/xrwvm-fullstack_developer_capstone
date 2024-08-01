@@ -1,4 +1,4 @@
-version: '3.9'
+version: "3.9"
 
 services:
   # Mongodb service
@@ -16,8 +16,10 @@ services:
     image: nodeapp
     ports:
       - 3050:3050
-    depends_on: 
+    depends_on:
       - mongo_db
+    environment:
+      - MONGODB_URI=mongodb+srv://eldhozsaji2002:r79xw6tSL0Uu87bV@dealershipsdb.hvuoo55.mongodb.net/?retryWrites=true&w=majority&appName=dealershipsDB
 
 volumes:
   mongo_data: {}

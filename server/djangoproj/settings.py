@@ -32,10 +32,13 @@ ALLOWED_HOSTS = [
     'localhost',
     '127.0.0.1',
     'https://dealership-l6pu.onrender.com',
+    'https://car-dealership.azurewebsites.net',
+    'car-dealership.azurewebsites.net',
     'dealership-l6pu.onrender.com',
 ]
 
 CSRF_TRUSTED_ORIGINS = [
+    'https://car-dealership.azurewebsites.net',
     'https://dealership-l6pu.onrender.com',
     'http://127.0.0.1',
 ]

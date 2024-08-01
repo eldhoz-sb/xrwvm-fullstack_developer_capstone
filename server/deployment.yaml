@@ -20,7 +20,7 @@ spec:
         run: dealership
     spec:
       containers:
-      - image: localhost:5000/dealership:latest
+      - image: eldhosesaji/dealership:latest
         imagePullPolicy: Always
         name: dealership
         ports:
